@@ -1,4 +1,4 @@
-## Tree
+# Tree
 
 # Introduction to trees
 
