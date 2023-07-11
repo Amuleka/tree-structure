@@ -86,70 +86,35 @@ for value in values:
 
 # Perform in-order traversal
 print(in_order_traversal(root))  # Expected output: [1, 3, 4, 6, 7, 8, 10, 13, 14]
+
 ```
-
-Sure! Here's the exercise formatted using markup language:
-
-markdown
 
 ## Exercise
 
-Let's create a binary search tree (BST) and perform some operations on it.
+In this exercise, we will create a binary search tree (BST) and perform various operations on it.
 
-```python
-# Binary Search Tree (BST) Node
-class Node:
-    def __init__(self, value):
-        self.value = value
-        self.left = None
-        self.right = None
+1. Define the `Node` class to represent nodes in the BST. Each node should have a `value`, `left` child, and `right` child.
 
-# Insertion operation for BST
-def insert(root, value):
-    if root is None:
-        return Node(value)
+2. Define the `insert` function to insert values into the BST while maintaining the BST property. The function should take the current `root` node and the `value` to be inserted. If the `root` is `None`, create a new node with the given value. Otherwise, recursively call the `insert` function on the left or right child, depending on the value.
 
-    if value < root.value:
-        root.left = insert(root.left, value)
-    elif value > root.value:
-        root.right = insert(root.right, value)
+3. Define the `in_order_traversal` function to perform an in-order traversal of the BST. This function should return a list of values in sorted order. The algorithm for in-order traversal is as follows:
 
-    return root
+   - If the root is `None`, return an empty list.
+   - Recursively traverse the left subtree using the `in_order_traversal` function and assign the result to `left_values`.
+   - Create a list containing the value of the root node and assign it to `root_value`.
+   - Recursively traverse the right subtree using the `in_order_traversal` function and assign the result to `right_values`.
+   - Concatenate `left_values`, `root_value`, and `right_values` to obtain the final result.
 
-# In-order traversal for BST
-def in_order_traversal(root):
-    if root is None:
-        return []
+4. Create an empty BST by initializing the `root` variable as `None`.
 
-    left_values = in_order_traversal(root.left)
-    root_value = [root.value]
-    right_values = in_order_traversal(root.right)
+5. Insert the following values into the BST: `[8, 3, 10, 1, 6, 14, 4, 7, 13]` using the `insert` function.
 
-    return left_values + root_value + right_values
+6. Perform an in-order traversal of the BST using the `in_order_traversal` function and print the result.
 
-# Create a BST
-root = None
-
-# Insert values into the BST
-values = [8, 3, 10, 1, 6, 14, 4, 7, 13]
-for value in values:
-    root = insert(root, value)
-
-# Perform in-order traversal
-print(in_order_traversal(root))  # Expected output: [1, 3, 4, 6, 7, 8, 10, 13, 14]
-
-In this exercise, we define the Node class to represent nodes in a binary search tree (BST). We also define the insert function to insert values into the BST while maintaining the BST property. The in_order_traversal function performs an in-order traversal of the BST and returns the values in sorted order.
-
-We then create an empty BST, insert values [8, 3, 10, 1, 6, 14, 4, 7, 13] into it using the insert function, and finally perform an in-order traversal using the in_order_traversal function. The expected output is [1, 3, 4, 6, 7, 8, 10, 13, 14], which represents the sorted values of the BST.
-
-In this exercise, we create a binary search tree (BST) and perform various operations on it.
-
-    First, we define the Node class to represent nodes in the BST. Each node has a value, left child, and right child.
-    Next, we define the insert function to insert values into the BST while maintaining the BST property. It takes the current root and the value to be inserted. If the root is None, a new node is created with the given value. Otherwise, the function recursively calls itself on the left or right child depending on the value.
-    We also define the in_order_traversal function to perform an in-order traversal of the BST. It returns a list of values in sorted order. The function recursively traverses the left subtree, visits the root node, and then traverses the right subtree.
-    Finally, we create an empty BST by initializing the root variable as None. We insert values [8, 3, 10, 1, 6, 14, 4, 7, 13] into the BST using the insert function. Finally, we perform an in-order traversal using the in_order_traversal function and print the result.
-
-The expected output of the program is [1, 3, 4, 6, 7, 8, 10, 13, 14], which represents the sorted values of the BST.
-```
+The expected output is `[1, 3, 4, 6, 7, 8, 10, 13, 14]`, which represents the sorted values of the BST.
 
 # Practice
+
+It is time to test your knowledge. Click on [this link](https://github.com/Amuleka/tree-structure/blob/main/exercises/tree-incomplete.py) to do the exercise.
+
+Once you've done it or tried it for a couple of times you can check the solution [here](https://github.com/Amuleka/tree-structure/blob/main/exercises/tree-complete.py).
